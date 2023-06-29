@@ -23,10 +23,12 @@ public class SubtaskServiceImpl implements SubtaskService {
 
 	@Override
 	public void setNewSubTask(SubtaskInput subtaskInput) {
+		subtaskInput.setApprStatus("NA");
 		SubtaskPrimaryKey spk = new SubtaskPrimaryKey();
 		spk.setTaskId(subtaskInput.getTaskId());
 		spk.setSubtaskId((subtaskInput.getSubtaskId()));
 		Subtask subtask = subtaskInput.toEntity();
+
 		subtask.setPrimaryKey(spk);
 		subtask.getPrimaryKey().getTaskId();
 

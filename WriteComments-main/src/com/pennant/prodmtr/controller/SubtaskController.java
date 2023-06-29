@@ -39,7 +39,6 @@ public class SubtaskController {
 		System.out.println("id is " + subtaskInput.getTaskId());
 		try {
 			logger.info("Here the try will be trying to handle the statement");
-			subtaskInput.setApprStatus("NA");
 
 			logger.info(subtaskInput.getSubtaskDescription());
 			logger.info(subtaskInput.getCreationDate());
