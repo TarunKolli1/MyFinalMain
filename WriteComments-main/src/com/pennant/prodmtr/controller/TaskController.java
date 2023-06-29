@@ -186,5 +186,4 @@ public class TaskController {
 		taskService.updateTaskStatus(taskUpdateFormModel);
 		return "redirect:activity";
 	}
-
 }

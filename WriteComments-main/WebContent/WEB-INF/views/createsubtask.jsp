@@ -12,7 +12,7 @@
     <div class="container">
         <h1>Create Subtask</h1>
         <form action="saveSubtask" method="GET">
-              <<div class="form-group">
+              <div class="form-group">
     <label for="taskId">Task ID:</label>
     <input type="number" class="form-control" id="taskId" name="taskId" value="${taskId}">
 </div>
@@ -33,16 +33,12 @@
                 <label for="subtaskDate">Subtask Creation Date:</label>
                 <input type="date" class="form-control" name="creationDate" id="subtaskDate">
             </div>
-            <button type="submit" class="btn btn-primary" onclick="addSubtask()">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
-    	function addSubtask(){
-    		window.alert("Subtask added succesfully");
-    	}
     </script>
 </body>
 </html>

@@ -55,7 +55,7 @@
                 <td>${task.taskSupervisorId}</td>
                 <td>${task.taskStatus}</td>
                 <td>
-                    <c:if test="${task.taskStatus == 'INPR'}">
+                    <c:if test="${task.taskStatus == 'INPR'||task.taskStatus == 'REFC'||task.taskStatus == 'REVW'}">
 							<form action="updateSuccess" method="GET" style="display: inline;">
     							<input type="hidden" name="taskId" value="${task.taskId}" />
     							<button type="submit" class="btn btn-primary update-button">Update Status</button>
@@ -69,6 +69,22 @@
             </tr>
         </c:forEach>
     </table>
+    
+    <div class="center">
+            <%-- Generate pagination links based on the total number of pages --%>
+            <% int totalPages = (int) request.getAttribute("totalPages"); %>
+            <% int currentPage = (int) request.getAttribute("currentPage"); %>
+            <% for (int i = 1; i <= totalPages; i++) { %>
+                <% if (i == currentPage) { %>
+                    <strong><%= i %></strong>
+                <% } else { %>
+                    <a href="?page=<%= i %>" class="page-link"><%= i %></a>
+                <% } %>
+            <% } %>
+            <br><br>
+           <button class="addcand" onclick="addCandidate()">Add</button>
+
+        </div>
 </body>
 <script>
 $(document).ready(function() {

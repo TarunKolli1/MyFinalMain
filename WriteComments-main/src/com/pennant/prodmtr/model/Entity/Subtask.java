@@ -36,6 +36,17 @@ public class Subtask {
 	@Column(name = "sbts_status")
 	private String sbts_status;
 
+	@Column(name = "sbts_approval_status")
+	private String apprStatus;
+
+	public String getApprStatus() {
+		return apprStatus;
+	}
+
+	public void setApprStatus(String apprStatus) {
+		this.apprStatus = apprStatus;
+	}
+
 	public Subtask(SubtaskPrimaryKey primaryKey, String subtaskDescription, Double numberOfHours, Date creationDate,
 			String sbts_status) {
 		super();

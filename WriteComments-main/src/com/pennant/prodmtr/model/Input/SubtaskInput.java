@@ -7,12 +7,21 @@ import com.pennant.prodmtr.model.Entity.Subtask;
 import com.pennant.prodmtr.model.Entity.SubtaskPrimaryKey;
 
 public class SubtaskInput {
-	private Subtask subtask;
+
 	private Integer taskId;
 	private Integer subtaskId;
 	private String subtaskDescription;
 	private Double numberOfHours;
 	private String creationDate;
+	private String apprStatus;
+
+	public String getApprStatus() {
+		return apprStatus;
+	}
+
+	public void setApprStatus(String apprStatus) {
+		this.apprStatus = apprStatus;
+	}
 
 	public Integer getTaskId() {
 		return taskId;
@@ -65,6 +74,7 @@ public class SubtaskInput {
 		subtask.setPrimaryKey(primaryKey);
 		subtask.setSubtaskDescription(this.subtaskDescription);
 		subtask.setNumberOfHours(this.numberOfHours);
+		subtask.setApprStatus(this.apprStatus);
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		try {
